@@ -1,0 +1,100 @@
+.mat-simple-snackbar {
+  color: #fff;
+  display: block !important;
+  span {
+    display: block;
+    text-align: center !important;
+  }
+}
+.mat-snack-bar-container {
+  background: $primary;
+}
+
+.mat-radio-label-content {
+  padding-top: 1px;
+}
+
+.mat-input-element {
+  border: 1px solid #ced4da !important;
+}
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+//bootstrap override
+.form-control:focus {
+  border-color: $primary;
+  box-shadow: none;
+}
+.form-group {
+  margin-bottom: 0;
+}
+
+.btn.focus,
+.btn:focus,
+a:focus,
+button:focus,
+input:focus,
+span:focus {
+  box-shadow: none;
+  outline: none;
+}
+.breadcrumb {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  color: #6a6a6a;
+  background: $white;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+  padding-left: 7px;
+  // content: '›' !important;
+  color: $primary;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background: $primary;
+}
+.dropdown-menu {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.popover-body {
+  color: $warn !important;
+}
+.popover {
+  z-index: 99;
+  font-size: 0.8rem;
+}
+
+.jumbotron-fluid {
+  text-align: center;
+}
+
+.input-group-text {
+  border-radius: 0 !important;
+  height: 36px;
+  background-color: #f7f7f7;
+}
+.btn,
+.form-control {
+  height: 38px;
+}
+
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+label {
+  margin-bottom: 0;
+}
+
+.mat-checkbox-inner-container {
+  margin: 0 !important;
+}
+.mat-simple-snackbar {
+  color: unset;
+}

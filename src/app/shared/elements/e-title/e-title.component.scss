@@ -1,0 +1,13 @@
+.e-label {
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+body {
+  .mat-checkbox-layout {
+    display: block;
+    .mat-checkbox-label {
+      line-height: 36px;
+    }
+  }
+}

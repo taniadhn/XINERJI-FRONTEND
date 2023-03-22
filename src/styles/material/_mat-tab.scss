@@ -1,0 +1,22 @@
+.mat-tab-label-container {
+  .mat-ripple {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #c5c9cf;
+    font-weight: bold !important;
+    font-size: 12px;
+    margin: 0 1px;
+  }
+
+  .mat-tab-label-active {
+    font-weight: bold !important;
+    background-color: #3c4aa8 !important;
+    opacity: 1 !important;
+
+    .mat-tab-label-content {
+      color: white !important;
+      z-index: 2;
+      font-size: 15px;
+    }
+  }
+}

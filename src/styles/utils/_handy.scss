@@ -1,0 +1,196 @@
+$mediaMinWidthTablet: 768px;
+$mediaMaxWidthMedium: 1200px;
+$mediaMinWidthLg: 1200px;
+
+/* -------------------------------------------------------------------------- */
+/*                                    color                                   */
+/* -------------------------------------------------------------------------- */
+$colors: (
+  "primary": $primary,
+  "secondaryPrimary": $secondaryPrimary,
+  "accent": $accent,
+  "warn": $warn,
+  "white": $white,
+  "darkgrey": $darkgrey,
+  "grey": $grey,
+  "blue": $blue,
+  "info": $cyan,
+  "black": $black,
+  "glass": $glass,
+  "success": $success,
+  "failed": $failed,
+  "lightgrey": $lightGrey,
+  "warning": $warning,
+  "primary-theme": $primary-theme,
+  "secondary-theme": $secondary-theme,
+  "edit": $edit,
+  "sidebar": $sidebar,
+  "avatar-sidebar": $avatar-sidebar,
+  "items-active": $items-active,
+  "active-submenu": $active-submenu,
+  "itemsactive-child": $itemsactive-child,
+  "itemsidebar": $itemsidebar,
+  "head-sidebar": $head-sidebar,
+  "search-sidebar": $search-sidebar,
+);
+@each $key, $color in $colors {
+  .#{$key}-color {
+    color: $color !important;
+  }
+  .#{$key}-back {
+    background-color: $color !important;
+  }
+  .#{$key}-color-hover:hover {
+    color: $color !important;
+  }
+}
+.sidebar-active-submenu {
+  background-color: $itemsactive-child !important;
+  color: $accent !important;
+}
+
+.left-panel-back {
+  background-color: $left-panel-back !important;
+}
+
+.head-profile-menu-color {
+  color: $head-profile-menu !important;
+}
+
+.bdrop {
+  background-color: #4e4e4ef2;
+  backdrop-filter: blur(4px);
+}
+/* -------------------------------------------------------------------------- */
+/*                                   border                                   */
+/* -------------------------------------------------------------------------- */
+$sizes: (
+  "1": 1px,
+  "2": 2px,
+  // '3': 3px,
+  // '4': 4px,,,,,,,,,,,
+);
+
+$borderStyles: (
+  // 'dotted': dotted,
+  // 'dashed': dashed,
+  "solid": solid,
+  // 'double': double,
+  // 'groove': groove,
+  // 'ridge': ridge,
+  // 'inset': inset,
+  // 'outset': outset
+);
+
+@each $color-key, $color in $colors {
+  @each $style-key, $style in $borderStyles {
+    @each $size-key, $size in $sizes {
+      .border-#{$style-key}-#{$color-key}-#{$size-key} {
+        border: $size $style $color !important;
+      }
+    }
+  }
+}
+/* -------------------------------------------------------------------------- */
+/*                               curvy || radius                              */
+/* -------------------------------------------------------------------------- */
+.curvy {
+  border-radius: 5px !important;
+}
+
+.so-curvy {
+  border-radius: 23px !important;
+}
+.flat-curvy {
+  border-radius: 0 !important;
+}
+
+.flat-left {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.flat-right {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+/* -------------------------------------------------------------------------- */
+/*                                    text                                    */
+/* -------------------------------------------------------------------------- */
+.dir-right {
+}
+.dir-left {
+  direction: ltr !important;
+}
+
+.bold {
+  font-weight: 800 !important;
+}
+/* -------------------------------------------------------------------------- */
+/*                                    shdow                                   */
+/* -------------------------------------------------------------------------- */
+$sizes: 5px, 10px, 20px;
+@each $size in $sizes {
+  .margin-#{$size} {
+    margin-top: $size;
+  }
+}
+@mixin box-shadow(
+  $x-axis: 0,
+  $y-axis: 1px,
+  $z-axis: 1px,
+  $blur: 2px,
+  $color: $default
+) {
+  box-shadow: $x-axis $y-axis $z-axis $blur $color;
+}
+.box-shadow {
+  border-radius: 50px;
+  @include box-shadow(0, 3px, 4px, 0, rgba(0, 0, 0, 0.28));
+  background-color: #ffffff;
+}
+.box {
+  @extend .box-shadow;
+}
+/* -------------------------------------------------------------------------- */
+/* image */
+/* -------------------------------------------------------------------------- */
+.pointer-hover {
+  cursor: pointer !important;
+  color: blue;
+}
+.pointer {
+  @extend .pointer-hover; // cursor: pointer !important;
+}
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+.profile-pic {
+  display: none;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  @media screen and (max-width: $break-small) {
+    background-color: purple;
+  }
+  @media screen and (min-width: $break-large) {
+    float: right;
+  }
+}
+/* ---------------------------- full screen modal --------------------------- */
+body {
+  .fullScreen {
+    min-width: 100vw;
+    min-height: 100vh !important;
+    @media (max-width:#{$mediaMaxWidthMedium}) {
+      min-width: 100vw;
+      min-height: 100vh;
+    }
+  }
+  .dontFullScreen {
+    max-width: 80vw;
+    @media (max-width:#{$mediaMaxWidthMedium}) {
+      min-width: 100vw;
+    }
+  }
+}

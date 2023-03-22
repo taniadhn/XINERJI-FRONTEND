@@ -1,0 +1,47 @@
+<div class="form-group" [formGroup]="formGroup" id="e-jalali-date-picker">
+  <ng-container>
+    <div class="">
+      <label
+        class="e-label m-0 p-0"
+        [class.pb-1]="!required"
+        for="exampleFormControlFile1"
+        >{{ label }}
+      </label>
+      <small class="warn-color pr-1" *ngIf="required && showRequired">
+        *
+      </small>
+    </div>
+    <div class="input-group">
+      <input
+        dir="rtl"
+        class="form-control curvy"
+        [required]="required"
+        matInput
+        [matDatepicker]="fromDate"
+        [type]="type"
+        [formControlName]="controlName"
+        (click)="fromDate.open()"
+        (dateChange)="EndDateChange($event)"
+        [class.is-valid]="control.valid && control.touched"
+        [class.is-invalid]="control.invalid && control.touched"
+        [placeholder]="placeholder"
+        [max]="maxDate"
+        [min]="minDate"
+      />
+
+      <mat-datepicker
+        disabled="false"
+        touchUi="true"
+        #fromDate
+      ></mat-datepicker>
+
+      <!-- -------------------------------- error -------------------------------- -->
+      <div
+        *ngIf="control.invalid && control.touched"
+        class="btn-block small pt-2 warn-color message-error"
+      >
+        <div *ngIf="control.errors.required">Bu alan zorunlu</div>
+      </div>
+    </div>
+  </ng-container>
+</div>

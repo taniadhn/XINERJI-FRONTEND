@@ -1,0 +1,83 @@
+//bootstrap override
+.form-control:focus {
+  border-color: $primary;
+  box-shadow: none;
+}
+.form-group {
+  margin-bottom: 0;
+}
+
+.btn.focus,
+.btn:focus,
+a:focus,
+button:focus,
+input:focus,
+span:focus {
+  box-shadow: none;
+  outline: none;
+}
+.breadcrumb {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  color: #6a6a6a;
+  background: $white;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+  padding-left: 7px;
+  // content: '›' !important;
+  color: $primary;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background: $primary;
+}
+.dropdown-menu {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.popover-body {
+  color: $warn !important;
+}
+.popover {
+  z-index: 99;
+  font-size: 0.8rem;
+}
+
+.jumbotron-fluid {
+  text-align: center;
+}
+
+.input-group-text {
+  border-radius: 0 !important;
+  height: 36px;
+  background-color: #f7f7f7;
+}
+.btn,
+.form-control {
+  height: 36px;
+}
+
+.submit-buttons {
+  height: 45px;
+  border-radius: 6px !important;
+  min-width: 300px;
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 800px,
+  lg: 1280px,
+  xl: 1600px,
+);
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+label {
+  margin-bottom: 0;
+}

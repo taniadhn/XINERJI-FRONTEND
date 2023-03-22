@@ -1,0 +1,110 @@
+#e-dropdown {
+  .message-error {
+    position: absolute;
+    top: 35px;
+  }
+  .p-dropdown {
+    height: 36px;
+    width: 100%;
+    min-width: auto;
+    font-family: "iransans", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  .p-dropdown-label-container {
+    width: inherit !important;
+  }
+  .p-dropdown-items span {
+    font-family: "iransans", sans-serif;
+    margin-right: 10px;
+  }
+  span.p-checkbox-icon {
+    font-family: "primeicons" !important;
+    margin-right: 0 !important;
+  }
+
+  .p-dropdown-panel {
+    .p-dropdown-empty-message {
+      font-family: "iransans";
+      color: red;
+    }
+
+    .p-dropdown-header {
+      padding: 1px;
+      .p-dropdown-filter-container {
+        // width: 85% !important;
+      }
+
+      .p-chkbox {
+        margin-left: 5px;
+      }
+      .p-dropdown-filter {
+        margin: 0;
+      }
+    }
+  }
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-size: 13px;
+  }
+
+  span.p-placeholder {
+    font-family: "iransans";
+    padding-top: 8px !important;
+    font-size: small !important;
+  }
+
+  .filterDropDown {
+    width: 100%;
+  }
+
+  select {
+    padding-top: 2px;
+  }
+  .labelInput {
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .is-invalid {
+    .p-dropdown {
+      border: 1px solid #ff0500;
+      border-left: 5px solid #ff0500;
+    }
+  }
+  .is-valid {
+    .p-dropdown {
+      border: 1px solid #00bb0b;
+      border-left: 5px solid #00bb0b;
+    }
+  }
+  .p-dropdown:enabled:focus:not(.p-state-error) {
+    box-shadow: none !important;
+  }
+
+  .p-dropdown-trigger {
+    border-radius: 5px !important;
+  }
+
+  .p-inputtext {
+    font-family: "iransans";
+    height: 37px;
+    font-size: 13px;
+  }
+}
+
+span.p-dropdown-empty-message::after {
+  content: " test ";
+}
+
+.p-dropdown-empty-message {
+  visibility: hidden;
+  direction: ltr !important;
+  font-size: small;
+}
+.p-dropdown-empty-message:after {
+  content: "Sonuç bulunamadı";
+  visibility: visible;
+}

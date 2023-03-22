@@ -1,0 +1,56 @@
+<div id="e-dropdown" class="form-group" [formGroup]="formGroup">
+  <app-e-title
+    *ngIf="label"
+    [label]="label"
+    [required]="required"
+    (checkBoxChanged)="
+      $event == true
+        ? formGroup.controls[controlName].disable()
+        : formGroup.controls[controlName].enable()
+    "
+  ></app-e-title>
+
+  <div class="input-group">
+    <div class="input-group-addon" *ngIf="startIcon">
+      <button
+        mat-ripple
+        class="btn white-back accent-color border-grey-1 pb-0"
+        type="button"
+        [disabled]="true"
+      >
+        <i [ngClass]="['fa', startIcon]" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="filterDropDown">
+      <p-dropdown
+        [filter]="filter"
+        [placeholder]="placeholder"
+        [options]="options"
+        [formControlName]="controlName"
+        [class.is-valid]="control.valid && control.touched"
+        [class.is-invalid]="control.invalid && control.touched"
+        (onChange)="changeInput.emit($event.value)"
+        filterBy="label,en"
+        [emptyFilterMessage]="emptyFilterMessage"
+        [virtualScroll]="virtualScroll"
+        [itemSize]="virtualScroll ? 30 : undefined"
+        [scrollHeight]="scrollHeight"
+      >
+        <ng-container *ngIf="hasItemColor && !hasItemImage">
+          <ng-template let-item pTemplate="item">
+            <span [style.color]="item.color" class="bold">
+              {{ item.label }}</span
+            >
+          </ng-template>
+        </ng-container>
+      </p-dropdown>
+    </div>
+    <!-- -------------------------------- error -------------------------------- -->
+    <div
+      *ngIf="control.invalid && control.touched"
+      class="btn-block small pt-2 warn-color message-error"
+    >
+      <div *ngIf="control.errors.required">Bu alan zorunlu</div>
+    </div>
+  </div>
+</div>

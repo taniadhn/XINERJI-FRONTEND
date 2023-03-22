@@ -1,0 +1,28 @@
+.mat-button,
+.mat-flat-button,
+.mat-icon-button,
+.mat-stroked-button,
+.form-control,
+button {
+  border-radius: 0 !important;
+}
+
+.mat-icon-button {
+  border-radius: 50% !important;
+}
+
+.btn.focus,
+.btn:focus,
+a:focus,
+button:focus,
+input:focus,
+span:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.submit-buttons {
+  height: 45px;
+  border-radius: 6px !important;
+  min-width: 300px;
+}

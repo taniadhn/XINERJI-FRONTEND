@@ -1,0 +1,9 @@
+mat-dialog-container.mat-dialog-container {
+  padding: 0;
+}
+
+.primary-mat-dialog-container {
+  .mat-dialog-container {
+    background: $white;
+  }
+}
